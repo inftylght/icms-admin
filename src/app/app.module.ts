@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import {CalculateListComponent} from './calculate-list/calculate-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CalculateListComponent,
     LoginComponent
   ],
   imports: [
+    MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
