@@ -7,12 +7,14 @@ import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatT
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import {CalculateListComponent} from './calculate-list/calculate-list.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculateListComponent,
-    LoginComponent
+    LoginComponent,
+    ArticleListComponent
   ],
   imports: [
     MatTableModule,
