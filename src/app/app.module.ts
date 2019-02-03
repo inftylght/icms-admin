@@ -5,16 +5,19 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
-import {CalculateListComponent} from './calculate-list/calculate-list.component';
-import { ArticleListComponent } from './article-list/article-list.component';
+import { LoginComponent } from './component/login/login.component';
+import {CalculateListComponent} from './component/calculate-list/calculate-list.component';
+import { ArticleListComponent } from './component/article-list/article-list.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ArticleEditComponent } from './component/article-edit/article-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculateListComponent,
     LoginComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    ArticleEditComponent
   ],
   imports: [
     MatTableModule,
@@ -25,6 +28,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,5 +1,5 @@
 export interface ArticleListInterface {
-  name: String;
-  shortContent: String;
+  id: number;
+  title: String;
   action: any;
 }

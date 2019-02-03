@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {CalculateListComponent} from './calculate-list/calculate-list.component';
-import {ArticleListComponent} from './article-list/article-list.component';
+import {LoginComponent} from './component/login/login.component';
+import {CalculateListComponent} from './component/calculate-list/calculate-list.component';
+import {ArticleListComponent} from './component/article-list/article-list.component';
+import {ArticleEditComponent} from './component/article-edit/article-edit.component';
 
 const routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'calculate/list', component: CalculateListComponent},
-  {path: 'article/list', component: ArticleListComponent}
+  {path: 'article/list', component: ArticleListComponent},
+  {path: 'article/edit/:id', component: ArticleEditComponent}
 ];
 
 @NgModule({

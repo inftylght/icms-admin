@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.routter.navigateByUrl('/calculate/list');
+    this.routter.navigateByUrl('/article/list');
   }
 
 }
