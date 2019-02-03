@@ -11,6 +11,7 @@ import { ArticleListComponent } from './component/article-list/article-list.comp
 import {HttpClientModule} from '@angular/common/http';
 import { ArticleEditComponent } from './component/article-edit/article-edit.component';
 import {FormsModule} from '@angular/forms';
+import {CovalentTextEditorModule} from '@covalent/text-editor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CovalentTextEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

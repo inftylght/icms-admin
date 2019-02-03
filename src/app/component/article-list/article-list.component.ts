@@ -23,7 +23,7 @@ export class ArticleListComponent implements OnInit {
   ngOnInit() {
     this.articleList = [];
     this.articleService.list()
-      .subscribe((data) => {
+      .then(data => {
         data.forEach(article => {
           this.articleList.push({
             id: article.id,
@@ -32,7 +32,7 @@ export class ArticleListComponent implements OnInit {
           });
         });
         this.articleList = [...this.articleList];
-      });
+      })
     this.displayColumns = ['title', 'action'];
 
     this.edit = function (articleId) {
