@@ -5,3 +5,11 @@ mat-card.main-container{
   margin: auto;
   margin-top: 20px;
 }
+.width-100-percent > *{
+  width: 100%;
+}
+* {
+  -webkit-box-sizing: unset;
+  -moz-box-sizing: unset;
+  box-sizing: unset;
+}

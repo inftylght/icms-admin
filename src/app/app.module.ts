@@ -10,6 +10,7 @@ import {CalculateListComponent} from './component/calculate-list/calculate-list.
 import { ArticleListComponent } from './component/article-list/article-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ArticleEditComponent } from './component/article-edit/article-edit.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ArticleEditComponent } from './component/article-edit/article-edit.comp
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
