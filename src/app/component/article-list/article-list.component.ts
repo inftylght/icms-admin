@@ -9,8 +9,8 @@ import {ArticleService} from '../../service/article.service';
 })
 export class ArticleListComponent implements OnInit {
 
-  private articleList: ArticleListInterface[];
-  private displayColumns: string[];
+  public articleList: ArticleListInterface[];
+  public displayColumns: string[];
 
   public edit;
 

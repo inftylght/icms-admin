@@ -8,8 +8,8 @@ import {CalculateListInterface} from '../interface/calculate-list-interface';
 })
 export class CalculateListComponent implements OnInit {
 
-  private calculateList: CalculateListInterface[];
-  private displayedColumns: string[];
+  public calculateList: CalculateListInterface[];
+  public displayedColumns: string[];
 
   constructor() {
   }
