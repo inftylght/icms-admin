@@ -10,6 +10,7 @@ export class ArticleService {
   public get;
   public list;
   public update;
+  public create;
 
   constructor(private http: HttpClient) {
     const serviceURL = `${environment.apiURL}/article`;
@@ -46,6 +47,20 @@ export class ArticleService {
     this.update = function (body) {
       return new Promise((onFullFill, reject) => {
         const req = http.put(`${serviceURL}`, body)
+          .subscribe((data) => {
+              onFullFill(data);
+              req.unsubscribe();
+            },
+            (error) => {
+              reject(error);
+              req.unsubscribe();
+            });
+      });
+    };
+
+    this.create = function (body) {
+      return new Promise((onFullFill, reject) => {
+        const req = http.post(`${serviceURL}`, body)
           .subscribe((data) => {
               onFullFill(data);
               req.unsubscribe();

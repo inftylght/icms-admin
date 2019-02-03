@@ -3,7 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTableModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './component/login/login.component';
 import {CalculateListComponent} from './component/calculate-list/calculate-list.component';
@@ -12,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ArticleEditComponent } from './component/article-edit/article-edit.component';
 import {FormsModule} from '@angular/forms';
 import {CovalentTextEditorModule} from '@covalent/text-editor';
+import { ArticleCreateComponent } from './component/article-create/article-create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +28,8 @@ import {CovalentTextEditorModule} from '@covalent/text-editor';
     CalculateListComponent,
     LoginComponent,
     ArticleListComponent,
-    ArticleEditComponent
+    ArticleEditComponent,
+    ArticleCreateComponent
   ],
   imports: [
     MatTableModule,
@@ -28,6 +38,7 @@ import {CovalentTextEditorModule} from '@covalent/text-editor';
     MatInputModule,
     MatCardModule,
     MatToolbarModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
