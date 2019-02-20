@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CalculateListInterface} from '../interface/calculate-list-interface';
+import {CalculateService} from '../../service/calculate.service';
 
 @Component({
   selector: 'app-calculate-list',
@@ -11,20 +12,19 @@ export class CalculateListComponent implements OnInit {
   public calculateList: CalculateListInterface[];
   public displayedColumns: string[];
 
-  constructor() {
+  constructor(private calculateService: CalculateService) {
   }
 
   ngOnInit() {
-    this.calculateList = [
-      {
-        'name': 'การคำนวนดอกเบี้ยประกันกระเป๋าราย 7 ปี',
-        'action': null
-      },
-      {
-        'name': 'การคำนวนดอกเบี้ยประกันกระเป๋าราย 6 ปี',
-        'action': null
-      }
-    ];
+    this.calculateService.list()
+      .then((calculateList) => {
+        this.calculateList = calculateList.map((calculate) => {
+          return {
+            name: calculate.name,
+            action: null
+          };
+        });
+      });
     this.displayedColumns = ['name', 'action'];
   }
 
