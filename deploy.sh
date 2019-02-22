@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
+BASEDIR=$(dirname "$0")
+cd "$BASEDIR"
 git pull
 npm install
 ng build --prod
