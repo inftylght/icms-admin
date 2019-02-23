@@ -22,6 +22,7 @@ import {FormsModule} from '@angular/forms';
 import {CovalentTextEditorModule} from '@covalent/text-editor';
 import { ArticleCreateComponent } from './component/article-create/article-create.component';
 import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.component';
+import { CalculateCreateComponent } from './component/calculate-create/calculate-create.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.c
     ArticleListComponent,
     ArticleEditComponent,
     ArticleCreateComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    CalculateCreateComponent
   ],
   imports: [
     MatDialogModule,

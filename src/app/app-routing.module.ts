@@ -5,11 +5,13 @@ import {CalculateListComponent} from './component/calculate-list/calculate-list.
 import {ArticleListComponent} from './component/article-list/article-list.component';
 import {ArticleEditComponent} from './component/article-edit/article-edit.component';
 import {ArticleCreateComponent} from './component/article-create/article-create.component';
+import {CalculateCreateComponent} from './component/calculate-create/calculate-create.component';
 
 const routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'calculate/list', component: CalculateListComponent},
+  {path: 'calculate/create', component: CalculateCreateComponent},
   {path: 'article/list', component: ArticleListComponent},
   {path: 'article/create', component: ArticleCreateComponent},
   {path: 'article/edit/:id', component: ArticleEditComponent}

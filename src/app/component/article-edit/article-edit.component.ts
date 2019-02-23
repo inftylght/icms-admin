@@ -16,6 +16,8 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
   public markdownOptions;
   public title;
   public onEdit;
+  public titleEN;
+  public contentTextEN;
 
   constructor(
     private articleService: ArticleService,
@@ -34,7 +36,9 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
       const request = {
         id: this.articleId,
         title: this.title,
-        text: this.contentText
+        text: this.contentText,
+        titleEN: this.titleEN,
+        textEN: this.contentTextEN
       };
       this.articleService.update(request)
         .then(data => {
@@ -52,6 +56,8 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
           const result:any = data;
           this.title = result.title;
           this.contentText = result.text;
+          this.titleEN = result.titleEN;
+          this.contentTextEN = result.textEN;
         });
     });
   }

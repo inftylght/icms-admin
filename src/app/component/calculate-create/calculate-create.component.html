@@ -1,22 +1,20 @@
 <mat-card class="main-container">
   <mat-card-header>
     <mat-card-title>
-      Edit Article
+      Create Calculate
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form class="child-width-100-percent">
       <mat-form-field>
-        <input matInput placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"/>
+        <input matInput placeholder="Title TH" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"/>
       </mat-form-field>
-      <td-text-editor [(ngModel)]="contentText" [options]="markdownOptions" [ngModelOptions]="{standalone: true}"></td-text-editor>
       <mat-form-field>
         <input matInput placeholder="Title EN" [(ngModel)]="titleEN" [ngModelOptions]="{standalone: true}"/>
       </mat-form-field>
-      <td-text-editor [(ngModel)]="contentTextEN" [options]="markdownOptions" [ngModelOptions]="{standalone: true}"></td-text-editor>
     </form>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+    <button mat-raised-button color="primary" (click)="onCreate()">Create</button>
   </mat-card-actions>
 </mat-card>

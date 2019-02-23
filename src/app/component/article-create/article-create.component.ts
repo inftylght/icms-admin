@@ -14,6 +14,8 @@ export class ArticleCreateComponent implements OnInit {
   public markdownOptions;
   public title;
   public onCreate;
+  public titleEN;
+  public contentTextEN;
 
   constructor(
     private articleService: ArticleService,
@@ -31,7 +33,9 @@ export class ArticleCreateComponent implements OnInit {
     this.onCreate = () => {
       const request = {
         title: this.title,
-        text: this.contentText
+        text: this.contentText,
+        titleEN: this.titleEN,
+        textEN: this.contentTextEN
       };
       this.articleService.create(request)
         .then(data => {
