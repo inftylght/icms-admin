@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule,
+  MatCardModule, MatDialogModule,
+  MatFormFieldModule, MatIconModule,
   MatInputModule,
   MatSnackBarModule,
   MatTableModule,
@@ -21,6 +21,7 @@ import { ArticleEditComponent } from './component/article-edit/article-edit.comp
 import {FormsModule} from '@angular/forms';
 import {CovalentTextEditorModule} from '@covalent/text-editor';
 import { ArticleCreateComponent } from './component/article-create/article-create.component';
+import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,11 @@ import { ArticleCreateComponent } from './component/article-create/article-creat
     LoginComponent,
     ArticleListComponent,
     ArticleEditComponent,
-    ArticleCreateComponent
+    ArticleCreateComponent,
+    ConfirmDialogComponent
   ],
   imports: [
+    MatDialogModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -39,6 +42,7 @@ import { ArticleCreateComponent } from './component/article-create/article-creat
     MatCardModule,
     MatToolbarModule,
     MatSnackBarModule,
+    MatIconModule,
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
@@ -47,6 +51,7 @@ import { ArticleCreateComponent } from './component/article-create/article-creat
     CovalentTextEditorModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmDialogComponent]
 })
 export class AppModule { }

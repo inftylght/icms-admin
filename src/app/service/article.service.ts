@@ -11,6 +11,7 @@ export class ArticleService {
   public list;
   public update;
   public create;
+  public delete;
 
   constructor(private http: HttpClient) {
     const serviceURL = `${environment.apiURL}/article`;
@@ -61,6 +62,20 @@ export class ArticleService {
     this.create = function (body) {
       return new Promise((onFullFill, reject) => {
         const req = http.post(`${serviceURL}`, body)
+          .subscribe((data) => {
+              onFullFill(data);
+              req.unsubscribe();
+            },
+            (error) => {
+              reject(error);
+              req.unsubscribe();
+            });
+      });
+    };
+
+    this.delete = function (id) {
+      return new Promise((onFullFill, reject) => {
+        const req = http.delete(`${serviceURL}/${id}`)
           .subscribe((data) => {
               onFullFill(data);
               req.unsubscribe();

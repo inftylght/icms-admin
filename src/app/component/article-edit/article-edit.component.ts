@@ -49,8 +49,9 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
       this.articleId = param['id'];
       this.articleService.get(this.articleId)
         .then(data => {
-          this.title = data.title;
-          this.contentText = data.text;
+          const result:any = data;
+          this.title = result.title;
+          this.contentText = result.text;
         });
     });
   }
