@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ArticleService} from '../../service/article.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
 
 @Component({
@@ -22,7 +22,8 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
   constructor(
     private articleService: ArticleService,
     private activatedRoute: ActivatedRoute,
-    private snack: MatSnackBar
+    private snack: MatSnackBar,
+    private router: Router
   ) {
   }
 
@@ -43,6 +44,7 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
       this.articleService.update(request)
         .then(data => {
           this.snack.open(`Updated`, 'dismiss', {duration: 9000});
+          this.router.navigateByUrl('/article/list');
         })
         .catch(error => {
           this.snack.open(`Can't update article.`, 'dismiss', {duration: 9000});
@@ -53,7 +55,7 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
       this.articleId = param['id'];
       this.articleService.get(this.articleId)
         .then(data => {
-          const result:any = data;
+          const result: any = data;
           this.title = result.title;
           this.contentText = result.text;
           this.titleEN = result.titleEN;
@@ -63,7 +65,9 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.routerSubscription.unsubscribe();
+    this
+      .routerSubscription
+      .unsubscribe();
   }
 
 }

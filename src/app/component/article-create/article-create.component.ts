@@ -20,7 +20,7 @@ export class ArticleCreateComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private snack: MatSnackBar,
-    private routter: Router
+    private router: Router
   ) {
   }
 
@@ -40,6 +40,7 @@ export class ArticleCreateComponent implements OnInit {
       this.articleService.create(request)
         .then(data => {
           this.snack.open(`Created`, 'dismiss', {duration: 9000});
+          this.router.navigateByUrl('/article/list');
         })
         .catch(error => {
           this.snack.open(`Can't create article.`, 'dismiss', {duration: 9000});

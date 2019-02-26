@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 
@@ -7,23 +7,19 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CalculateService {
 
-  public list;
+  private serviceURL = `${environment.apiURL}/calculate`;
 
-  constructor(private http: HttpClient) {
-    const serviceURL = `${environment.apiURL}/calculate`;
-
-    this.list = function() {
-      return new Promise((onFullFill, reject) => {
-        const req = http.get(`${serviceURL}/list`)
-          .subscribe((data) => {
-              onFullFill(data);
-              req.unsubscribe();
-            },
-            (error) => {
-              reject(error);
-              req.unsubscribe();
-            });
-      });
-    };
+  list() {
+    return this.http
+      .get(`${this.serviceURL}/list`)
+      .toPromise();
   }
+
+  create(body) {
+    return this.http
+      .post(`${this.serviceURL}`, body)
+      .toPromise();
+  }
+
+  constructor(private http: HttpClient) {}
 }

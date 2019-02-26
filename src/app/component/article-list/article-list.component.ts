@@ -24,24 +24,22 @@ export class ArticleListComponent implements OnInit {
   ) {
   }
 
+
+  async getArticle() {
+    const articleList: any = await this.articleService.list();
+    this.articleList = articleList.map(article => {
+      return {
+        id: article.id,
+        title: article.title,
+        action: null
+      };
+    });
+  }
+
   ngOnInit() {
     this.articleList = [];
 
-    const getArticle = () => {
-      const articleList = [];
-      this.articleService.list()
-        .then(data => {
-          for (const article of data) {
-            articleList.push({
-              id: article.id,
-              title: article.title,
-              action: null
-            });
-          }
-          this.articleList = [...articleList];
-        });
-    };
-    getArticle();
+    this.getArticle();
 
     this.displayColumns = ['title', 'action'];
 
@@ -57,7 +55,7 @@ export class ArticleListComponent implements OnInit {
           const articleId = result.additional;
           this.articleService.delete(articleId)
             .then(data => {
-              getArticle();
+              this.getArticle();
             });
         }
       });
@@ -65,7 +63,6 @@ export class ArticleListComponent implements OnInit {
 
     this.edit = function (articleId) {
       this.routter.navigateByUrl('/article/list');
-      console.log('edit=', articleId);
     };
   }
 }
