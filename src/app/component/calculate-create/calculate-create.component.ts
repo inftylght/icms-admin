@@ -14,7 +14,7 @@ export class CalculateCreateComponent implements OnInit {
   public nameEN;
   public formList;
 
-  private generateInputMetaData() {
+  private static generateInputMetaData() {
     return JSON.parse(JSON.stringify({
       type: 'Number',
       name: null,
@@ -23,6 +23,14 @@ export class CalculateCreateComponent implements OnInit {
       selectionList: []
     }));
   }
+
+  private static generateSelectOptionMetaData() {
+    return JSON.parse(JSON.stringify({
+      nameTH: null,
+      nameEN: null,
+      value: null
+    }));
+  };
 
   constructor(
     private router: Router,
@@ -39,7 +47,7 @@ export class CalculateCreateComponent implements OnInit {
     this.formList = [
       ...this.formList,
       {
-        ...JSON.parse(JSON.stringify(this.generateInputMetaData()))
+        ...JSON.parse(JSON.stringify(CalculateCreateComponent.generateInputMetaData()))
       }
     ];
   }
@@ -48,6 +56,13 @@ export class CalculateCreateComponent implements OnInit {
     form.type = event.value;
     form.value = null;
     form.selectionList = [];
+  }
+
+  onNewOption(form) {
+    form.selectionList = [
+      ...form.selectionList,
+      CalculateCreateComponent.generateSelectOptionMetaData()
+    ];
   }
 
   async onCreate() {

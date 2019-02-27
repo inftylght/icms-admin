@@ -24,8 +24,12 @@
             {{form.type}}
           </span>
           <mat-radio-group (change)="onChangeForm($event, form)">
-            <mat-radio-button style="font-size: 13px; margin-left: 5px;" value="Number" checked="{{form.type==='Number'}}">Number</mat-radio-button>
-            <mat-radio-button style="font-size: 13px; margin-left: 5px;" value="Selection" checked="{{form.type==='Selection'}}">Selection</mat-radio-button>
+            <mat-radio-button style="font-size: 13px; margin-left: 5px;" value="Number"
+                              checked="{{form.type==='Number'}}">Number
+            </mat-radio-button>
+            <mat-radio-button style="font-size: 13px; margin-left: 5px;" value="Selection"
+                              checked="{{form.type==='Selection'}}">Selection
+            </mat-radio-button>
           </mat-radio-group>
         </mat-card-title>
       </mat-card-header>
@@ -37,13 +41,31 @@
           <mat-form-field>
             <input [(ngModel)]="form.nameEN" matInput placeholder="Title EN" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
+          <div *ngIf="form.type==='Selection'">
+            <mat-divider></mat-divider>
+            <div style="display: flex; padding-top: 10px;">
+              <span style="flex:auto;">
+                {{form.type}}
+              </span>
+              <button (click)="onNewOption(form)" mat-raised-button color="primary">New Option</button>
+            </div>
+            <p *ngFor="let selection of form.selectionList;">
+              <mat-form-field>
+                <input [(ngModel)]="selection.name" matInput placeholder="Title TH"/>
+              </mat-form-field>
+              <mat-form-field>
+                <input [(ngModel)]="selection.nameEN" matInput placeholder="Title EN"/>
+              </mat-form-field>
+              <mat-form-field>
+                <input [(ngModel)]="selection.value" matInput placeholder="Value"/>
+              </mat-form-field>
+            </p>
+          </div>
         </form>
-        <mat-divider></mat-divider>
-
       </mat-card-content>
     </mat-card>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-raised-button color="primary" (click)="onCreate()" >Create</button>
+    <button mat-raised-button color="primary" (click)="onCreate()">Create</button>
   </mat-card-actions>
 </mat-card>
