@@ -14,6 +14,9 @@
         <input matInput placeholder="Title EN" [(ngModel)]="titleEN" [ngModelOptions]="{standalone: true}"/>
       </mat-form-field>
       <td-text-editor [(ngModel)]="contentTextEN" [options]="markdownOptions" [ngModelOptions]="{standalone: true}"></td-text-editor>
+      <mat-form-field>
+        <input matInput placeholder="Youtube URL" [(ngModel)]="youtube" [ngModelOptions]="{standalone: true}"/>
+      </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions align="end">

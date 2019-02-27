@@ -18,6 +18,7 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
   public onEdit;
   public titleEN;
   public contentTextEN;
+  public youtube;
 
   constructor(
     private articleService: ArticleService,
@@ -39,7 +40,8 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
         title: this.title,
         text: this.contentText,
         titleEN: this.titleEN,
-        textEN: this.contentTextEN
+        textEN: this.contentTextEN,
+        youtube: this.youtube
       };
       this.articleService.update(request)
         .then(data => {
@@ -60,6 +62,7 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
           this.contentText = result.text;
           this.titleEN = result.titleEN;
           this.contentTextEN = result.textEN;
+          this.youtube = result.youtube;
         });
     });
   }

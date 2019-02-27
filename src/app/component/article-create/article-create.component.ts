@@ -16,6 +16,7 @@ export class ArticleCreateComponent implements OnInit {
   public onCreate;
   public titleEN;
   public contentTextEN;
+  public youtube;
 
   constructor(
     private articleService: ArticleService,
@@ -35,7 +36,8 @@ export class ArticleCreateComponent implements OnInit {
         title: this.title,
         text: this.contentText,
         titleEN: this.titleEN,
-        textEN: this.contentTextEN
+        textEN: this.contentTextEN,
+        youtube: this.youtube
       };
       this.articleService.create(request)
         .then(data => {
