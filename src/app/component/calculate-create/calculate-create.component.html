@@ -44,20 +44,18 @@
           <div *ngIf="form.type==='Selection'">
             <mat-divider></mat-divider>
             <div style="display: flex; padding-top: 10px;">
-              <span style="flex:auto;">
-                {{form.type}}
-              </span>
+              <span style="flex:auto;"></span>
               <button (click)="onNewOption(form)" mat-raised-button color="primary">New Option</button>
             </div>
             <p *ngFor="let selection of form.selectionList;">
               <mat-form-field>
-                <input [(ngModel)]="selection.name" matInput placeholder="Title TH"/>
+                <input [(ngModel)]="selection.name" matInput placeholder="Title TH" [ngModelOptions]="{standalone: true}"/>
               </mat-form-field>
               <mat-form-field>
-                <input [(ngModel)]="selection.nameEN" matInput placeholder="Title EN"/>
+                <input [(ngModel)]="selection.nameEN" matInput placeholder="Title EN" [ngModelOptions]="{standalone: true}"/>
               </mat-form-field>
               <mat-form-field>
-                <input [(ngModel)]="selection.value" matInput placeholder="Value"/>
+                <input [(ngModel)]="selection.value" matInput placeholder="Value" [ngModelOptions]="{standalone: true}"/>
               </mat-form-field>
             </p>
           </div>

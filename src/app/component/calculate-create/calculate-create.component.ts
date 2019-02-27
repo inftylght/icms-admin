@@ -72,16 +72,13 @@ export class CalculateCreateComponent implements OnInit {
       forms: this.formList
     };
     console.log('req', req);
-    // try {
-    //   await this.calculateService.create({
-    //     name: this.name,
-    //     nameEN: this.nameEN
-    //   });
-    //   this.snack.open(`Updated`, 'dismiss', {duration: 9000});
-    //   this.router.navigateByUrl('/calculate/list');
-    // } catch (error) {
-    //   this.snack.open(`Can't update calculate.`, 'dismiss', {duration: 9000});
-    // }
+    try {
+      await this.calculateService.create(req);
+      this.snack.open(`Updated`, 'dismiss', {duration: 9000});
+      this.router.navigateByUrl('/calculate/list');
+    } catch (error) {
+      this.snack.open(`Can't update calculate.`, 'dismiss', {duration: 9000});
+    }
   }
 
 }
