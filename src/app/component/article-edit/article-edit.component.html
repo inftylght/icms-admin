@@ -6,6 +6,13 @@
   </mat-card-header>
   <mat-card-content>
     <form class="child-width-100-percent">
+      <p>
+        http://www.youtube.com/
+        <mat-form-field>
+          <input matInput placeholder="Youtube Token" [(ngModel)]="youtube" [ngModelOptions]="{standalone: true}"/>
+        </mat-form-field>
+      </p>
+      <mat-divider></mat-divider>
       <mat-form-field>
         <input matInput placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"/>
       </mat-form-field>
@@ -14,9 +21,6 @@
         <input matInput placeholder="Title EN" [(ngModel)]="titleEN" [ngModelOptions]="{standalone: true}"/>
       </mat-form-field>
       <td-text-editor [(ngModel)]="contentTextEN" [options]="markdownOptions" [ngModelOptions]="{standalone: true}"></td-text-editor>
-      <mat-form-field>
-        <input matInput placeholder="Youtube URL" [(ngModel)]="youtube" [ngModelOptions]="{standalone: true}"/>
-      </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions align="end">
