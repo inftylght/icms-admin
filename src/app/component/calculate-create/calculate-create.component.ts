@@ -13,6 +13,7 @@ export class CalculateCreateComponent implements OnInit {
   public name;
   public nameEN;
   public formList;
+  public formula;
 
   private static generateInputMetaData() {
     return JSON.parse(JSON.stringify({
@@ -69,7 +70,8 @@ export class CalculateCreateComponent implements OnInit {
     const req = {
       name: this.name,
       nameEN: this.nameEN,
-      forms: this.formList
+      forms: this.formList,
+      formula: this.formula
     };
     console.log('req', req);
     try {
