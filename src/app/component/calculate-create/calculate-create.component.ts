@@ -73,7 +73,6 @@ export class CalculateCreateComponent implements OnInit {
       forms: this.formList,
       formula: this.formula
     };
-    console.log('req', req);
     try {
       await this.calculateService.create(req);
       this.snack.open(`Updated`, 'dismiss', {duration: 9000});

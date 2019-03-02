@@ -23,6 +23,7 @@ import {CovalentTextEditorModule} from '@covalent/text-editor';
 import { ArticleCreateComponent } from './component/article-create/article-create.component';
 import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.component';
 import { CalculateCreateComponent } from './component/calculate-create/calculate-create.component';
+import { CalculateEditComponent } from './component/calculate-edit/calculate-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CalculateCreateComponent } from './component/calculate-create/calculate
     ArticleEditComponent,
     ArticleCreateComponent,
     ConfirmDialogComponent,
-    CalculateCreateComponent
+    CalculateCreateComponent,
+    CalculateEditComponent
   ],
   imports: [
     MatRadioModule,

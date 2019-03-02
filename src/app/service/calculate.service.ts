@@ -27,6 +27,18 @@ export class CalculateService {
       .toPromise();
   }
 
+  get(id) {
+    return this.http
+      .get(`${this.serviceURL}/${id}`)
+      .toPromise();
+  }
+
+  update(body) {
+    return this.http
+      .put(`${this.serviceURL}`, body)
+      .toPromise();
+  }
+
   constructor(private http: HttpClient) {
   }
 }

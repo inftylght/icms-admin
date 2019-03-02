@@ -6,12 +6,14 @@ import {ArticleListComponent} from './component/article-list/article-list.compon
 import {ArticleEditComponent} from './component/article-edit/article-edit.component';
 import {ArticleCreateComponent} from './component/article-create/article-create.component';
 import {CalculateCreateComponent} from './component/calculate-create/calculate-create.component';
+import {CalculateEditComponent} from './component/calculate-edit/calculate-edit.component';
 
 const routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'calculate/list', component: CalculateListComponent},
   {path: 'calculate/create', component: CalculateCreateComponent},
+  {path: 'calculate/edit/:id', component: CalculateEditComponent},
   {path: 'article/list', component: ArticleListComponent},
   {path: 'article/create', component: ArticleCreateComponent},
   {path: 'article/edit/:id', component: ArticleEditComponent}
