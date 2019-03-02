@@ -21,5 +21,12 @@ export class CalculateService {
       .toPromise();
   }
 
-  constructor(private http: HttpClient) {}
+  delete(id) {
+    return this.http
+      .delete(`${this.serviceURL}/${id}`)
+      .toPromise();
+  }
+
+  constructor(private http: HttpClient) {
+  }
 }
