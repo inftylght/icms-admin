@@ -55,7 +55,7 @@ export class CalculateCreateComponent implements OnInit {
   onChangeForm(event, form) {
     form.type = event.value;
     form.value = null;
-    form.selectionList = [];
+    form.selectionList = [CalculateCreateComponent.generateSelectOptionMetaData()];
   }
 
   onNewOption(form) {
