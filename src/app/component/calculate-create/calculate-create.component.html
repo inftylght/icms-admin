@@ -31,6 +31,9 @@
                               checked="{{form.type==='Selection'}}">Selection
             </mat-radio-button>
           </mat-radio-group>
+          <button mat-icon-button color="accent" style="margin-top: -5px; color: red; margin-left: 30px;">
+            <mat-icon aria-label="Example icon-button with a heart icon" (click)="removeForm(form)">clear</mat-icon>
+          </button>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
@@ -55,8 +58,11 @@
                 <input [(ngModel)]="selection.nameEN" matInput placeholder="Option EN" [ngModelOptions]="{standalone: true}"/>
               </mat-form-field>
               <mat-form-field>
-                <input [(ngModel)]="selection.value" matInput placeholder="Value" [ngModelOptions]="{standalone: true}"/>
+                <input type="number" [(ngModel)]="selection.value" matInput placeholder="Value" [ngModelOptions]="{standalone: true}"/>
               </mat-form-field>
+              <button mat-icon-button color="accent" style="margin-top: -5px; color: red; margin-left: 30px;">
+                <mat-icon aria-label="Example icon-button with a heart icon" (click)="removeOption(form.selectionList, selection)">clear</mat-icon>
+              </button>
             </p>
           </div>
         </form>

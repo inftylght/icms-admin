@@ -82,4 +82,14 @@ export class CalculateCreateComponent implements OnInit {
     }
   }
 
+  removeForm(form) {
+    const formIndex = this.formList.indexOf(form);
+    this.formList.splice(formIndex, 1);
+  }
+
+  removeOption(optionList, option) {
+    const optionIndex = optionList.indexOf(option);
+    optionList.splice(optionIndex, 1);
+  }
+
 }

@@ -83,6 +83,12 @@ export class CalculateEditComponent implements OnInit {
     ];
   }
 
+  onChangeForm(event, form) {
+    form.type = event.value;
+    form.value = null;
+    form.selectionList = [CalculateEditComponent.generateSelectOptionMetaData()];
+  }
+
   onNewForm() {
     this.formList = [
       ...this.formList,
@@ -107,6 +113,16 @@ export class CalculateEditComponent implements OnInit {
     } catch (error) {
       this.snack.open(`Can't update calculate.`, 'dismiss', {duration: 9000});
     }
+  }
+
+  removeForm(form) {
+    const formIndex = this.formList.indexOf(form);
+    this.formList.splice(formIndex, 1);
+  }
+
+  removeOption(optionList, option) {
+    const optionIndex = optionList.indexOf(option);
+    optionList.splice(optionIndex, 1);
   }
 
 }
