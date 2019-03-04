@@ -14,9 +14,6 @@
       </mat-form-field>
     </form>
     <mat-divider></mat-divider>
-    <div style="display: flex; flex-direction: row-reverse; margin-top: 20px;">
-      <button (click)="onNewForm()" mat-raised-button color="primary">New Form</button>
-    </div>
     <mat-card *ngFor="let form of formList;" style="margin-top: 20px;">
       <mat-card-header class="child-div-full-width">
         <mat-card-title style="display: flex;">
@@ -68,6 +65,10 @@
         </form>
       </mat-card-content>
     </mat-card>
+    <div style="display: flex; flex-direction: row-reverse; margin-top: 20px;">
+      <button (click)="onNewForm()" mat-raised-button color="primary">New Form</button>
+    </div>
+    <mat-divider></mat-divider>
     <mat-card style="margin-top: 50px;">
       <mat-card-header class="child-div-full-width">
         <mat-card-title style="display: flex;">
