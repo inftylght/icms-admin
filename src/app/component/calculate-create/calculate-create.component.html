@@ -86,11 +86,11 @@
             <input [(ngModel)]="formula" matInput placeholder="Formula" [ngModelOptions]="{standalone: true}"/>
           </mat-form-field>
           <small>
-            use v[Number of block start at 0] as variable<br>
-            such as first block is v[0], and second block is v[1]<br>
+            use v[variable name inside single quote] as variable<br>
+            such as variable name is T1 it use v['T1'] as variable <br>
             <br>
             use javascript as calculate pattern<br>
-            such as v[0]+v[1] is combine first and second block
+            such as v['T1']+v['T2'] is combine T1 and T2
           </small>
         </form>
       </mat-card-content>
