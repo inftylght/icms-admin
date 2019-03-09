@@ -7,6 +7,7 @@ import {ArticleEditComponent} from './component/article-edit/article-edit.compon
 import {ArticleCreateComponent} from './component/article-create/article-create.component';
 import {CalculateCreateComponent} from './component/calculate-create/calculate-create.component';
 import {CalculateEditComponent} from './component/calculate-edit/calculate-edit.component';
+import {ConfigComponent} from './component/config/config.component';
 
 const routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes = [
   {path: 'calculate/edit/:id', component: CalculateEditComponent},
   {path: 'article/list', component: ArticleListComponent},
   {path: 'article/create', component: ArticleCreateComponent},
-  {path: 'article/edit/:id', component: ArticleEditComponent}
+  {path: 'article/edit/:id', component: ArticleEditComponent},
+  {path: 'config', component: ConfigComponent}
 ];
 
 @NgModule({

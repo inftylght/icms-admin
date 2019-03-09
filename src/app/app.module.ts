@@ -24,6 +24,7 @@ import { ArticleCreateComponent } from './component/article-create/article-creat
 import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.component';
 import { CalculateCreateComponent } from './component/calculate-create/calculate-create.component';
 import { CalculateEditComponent } from './component/calculate-edit/calculate-edit.component';
+import { ConfigComponent } from './component/config/config.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CalculateEditComponent } from './component/calculate-edit/calculate-edi
     ArticleCreateComponent,
     ConfirmDialogComponent,
     CalculateCreateComponent,
-    CalculateEditComponent
+    CalculateEditComponent,
+    ConfigComponent
   ],
   imports: [
     MatRadioModule,

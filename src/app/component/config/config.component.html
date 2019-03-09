@@ -1,0 +1,20 @@
+<mat-card class="main-container">
+  <mat-card-header>
+    <mat-card-title>
+      Config
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <h4>youtube</h4>
+      https://www.youtube.com/
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="XXXXXXXXXXXXX" [(ngModel)]="youtubeToken" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-divider></mat-divider>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="onUpdate()">Update</button>
+  </mat-card-actions>
+</mat-card>
