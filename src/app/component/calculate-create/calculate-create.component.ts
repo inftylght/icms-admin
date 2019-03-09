@@ -22,6 +22,7 @@ export class CalculateCreateComponent implements OnInit {
       name: null,
       nameEN: null,
       value: null,
+      variable: null,
       selectionList: []
     }));
   }
@@ -78,10 +79,10 @@ export class CalculateCreateComponent implements OnInit {
     };
     try {
       await this.calculateService.create(req);
-      this.snack.open(`Updated`, 'dismiss', {duration: 9000});
+      this.snack.open(`Created`, 'dismiss', {duration: 9000});
       this.router.navigateByUrl('/calculate/list');
     } catch (error) {
-      this.snack.open(`Can't update calculate.`, 'dismiss', {duration: 9000});
+      this.snack.open(`Can't create calculate.`, 'dismiss', {duration: 9000});
     }
   }
 

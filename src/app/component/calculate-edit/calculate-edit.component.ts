@@ -23,6 +23,7 @@ export class CalculateEditComponent implements OnInit {
       name: null,
       nameEN: null,
       value: null,
+      variable: null,
       selectionList: []
     }));
   }
@@ -60,6 +61,7 @@ export class CalculateEditComponent implements OnInit {
             tmpForm.type = form.type;
             tmpForm.name = form.name;
             tmpForm.nameEN = form.nameEN;
+            tmpForm.variable = form.variable;
             if (form.type === 'Selection') {
               tmpForm.selectionList = [];
               const selectionList = JSON.parse(form.config);

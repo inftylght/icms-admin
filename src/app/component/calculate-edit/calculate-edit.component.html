@@ -19,8 +19,11 @@
         <mat-card-title style="display: flex;">
           <span style="flex:auto;">
             {{form.type}}
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Variable Name" [(ngModel)]="form.variable" value="">
+            </mat-form-field>
           </span>
-          <mat-radio-group (change)="onChangeForm($event, form)">
+          <mat-radio-group (change)="onChangeForm($event, form)" style="padding-top: 25px;">
             <mat-radio-button style="font-size: 13px; margin-left: 5px;" value="Number"
                               checked="{{form.type==='Number'}}">Number
             </mat-radio-button>
