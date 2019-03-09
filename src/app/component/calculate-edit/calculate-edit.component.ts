@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CalculateService} from '../../service/calculate.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-calculate-edit',
@@ -38,11 +39,13 @@ export class CalculateEditComponent implements OnInit {
     private calculateService: CalculateService,
     private activatedRoute: ActivatedRoute,
     private snack: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private authenticateService: AuthenticateService
   ) {
   }
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.activatedRoute.params.subscribe((param) => {
       this.calculateId = param['id'];
       this.calculateService.get(this.calculateId)
@@ -61,7 +64,6 @@ export class CalculateEditComponent implements OnInit {
               tmpForm.selectionList = [];
               const selectionList = JSON.parse(form.config);
               for (const selection of selectionList) {
-                console.log(selection);
                 tmpForm.selectionList.push({
                   name: selection.name,
                   nameEN: selection.nameEN,

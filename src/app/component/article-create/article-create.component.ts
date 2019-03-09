@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ArticleService} from '../../service/article.service';
 import {MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-article-create',
@@ -21,11 +22,13 @@ export class ArticleCreateComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private snack: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private authenticateService: AuthenticateService
   ) {
   }
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.contentText = '';
     this.markdownOptions = {
       spellChecker: false

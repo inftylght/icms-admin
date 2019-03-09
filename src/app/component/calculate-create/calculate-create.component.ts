@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {CalculateService} from '../../service/calculate.service';
 import {MatSnackBar} from '@angular/material';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-calculate-create',
@@ -36,11 +37,13 @@ export class CalculateCreateComponent implements OnInit {
   constructor(
     private router: Router,
     private calculateService: CalculateService,
-    private snack: MatSnackBar
+    private snack: MatSnackBar,
+    private authenticateService: AuthenticateService
   ) {
   }
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.formList = [];
   }
 

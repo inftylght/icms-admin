@@ -3,6 +3,7 @@ import {CalculateListInterface} from '../interface/calculate-list-interface';
 import {CalculateService} from '../../service/calculate.service';
 import {ConfirmDialogComponent} from '../../dialog/confirm-dialog/confirm-dialog.component';
 import {MatDialog} from '@angular/material';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-calculate-list',
@@ -16,10 +17,12 @@ export class CalculateListComponent implements OnInit {
 
   constructor(
     private calculateService: CalculateService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authenticateService: AuthenticateService
   ) {}
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.getCalculateList();
     this.displayedColumns = ['name', 'action'];
   }

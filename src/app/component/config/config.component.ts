@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigService} from '../../service/config.service';
 import {MatSnackBar} from '@angular/material';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-config',
@@ -13,11 +14,13 @@ export class ConfigComponent implements OnInit {
 
   constructor(
     private configService: ConfigService,
-    private snack: MatSnackBar
+    private snack: MatSnackBar,
+    private authenticateService: AuthenticateService
   ) {
   }
 
   async ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     const configObj = await this.configService.getConfigMap();
     if (configObj) {
       this.youtubeToken = configObj['HOME.YOUTUBE.TOKEN'];

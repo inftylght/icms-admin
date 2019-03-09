@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ArticleService} from '../../service/article.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-article-edit',
@@ -24,11 +25,13 @@ export class ArticleEditComponent implements OnInit, OnDestroy {
     private articleService: ArticleService,
     private activatedRoute: ActivatedRoute,
     private snack: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private authenticateService: AuthenticateService
   ) {
   }
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.contentText = '';
     this.markdownOptions = {
       spellChecker: false

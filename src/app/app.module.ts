@@ -25,6 +25,7 @@ import { ConfirmDialogComponent } from './dialog/confirm-dialog/confirm-dialog.c
 import { CalculateCreateComponent } from './component/calculate-create/calculate-create.component';
 import { CalculateEditComponent } from './component/calculate-edit/calculate-edit.component';
 import { ConfigComponent } from './component/config/config.component';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ConfigComponent } from './component/config/config.component';
     ConfigComponent
   ],
   imports: [
+    NgxWebstorageModule.forRoot(),
     MatRadioModule,
     MatDividerModule,
     MatDialogModule,

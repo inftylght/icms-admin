@@ -3,6 +3,8 @@ import {ArticleListInterface} from '../interface/article-list-interface';
 import {ArticleService} from '../../service/article.service';
 import {MatDialog} from '@angular/material';
 import {ConfirmDialogComponent} from '../../dialog/confirm-dialog/confirm-dialog.component';
+import {Router} from '@angular/router';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-article-list',
@@ -20,7 +22,8 @@ export class ArticleListComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private changeDetectorRefs: ChangeDetectorRef,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authenticateService: AuthenticateService
   ) {
   }
 
@@ -37,6 +40,7 @@ export class ArticleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authenticateService.checkAuthenticate();
     this.articleList = [];
 
     this.getArticle();

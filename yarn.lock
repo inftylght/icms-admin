@@ -4499,6 +4499,13 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
+ngx-webstorage@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-webstorage/-/ngx-webstorage-3.0.2.tgz#407d3a908ad598a22c544d5f0b760f81e5d301fd"
+  integrity sha512-9CJIChJSruqlgAtAjbqCOQdDvlAR40pQ8VnSeYIY4KF83K1yVfq/IpOaa5hzHC0+jcq1PwJ+1TUyeR9A8bVHeQ==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticateService} from '../../service/authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +8,18 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  private username;
+  private password;
+
   constructor(
-    private routter: Router
-  ) { }
+    private authenticateService: AuthenticateService
+  ) {}
 
   ngOnInit() {
-    console.log('Enter this page');
   }
 
   login() {
-    this.routter.navigateByUrl('/article/list');
+    this.authenticateService.login(this.username, this.password);
   }
 
 }
