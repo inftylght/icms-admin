@@ -8,8 +8,8 @@ import {AuthenticateService} from '../../service/authenticate.service';
 })
 export class LoginComponent implements OnInit {
 
-  private username;
-  private password;
+  public username;
+  public password;
 
   constructor(
     private authenticateService: AuthenticateService
